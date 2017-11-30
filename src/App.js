@@ -2,23 +2,23 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './views/MainView';
+import MainView from './views/MainView'
+import {Route} from "react-router-dom";
+import CategoryView from "./views/CategoryView";
 // import './views/CategoryView';
 // import './views/PostView';
-// import './views/PostEdit';
+import PostEdit from './views/PostEdit';
 
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
         <div className="app">
             <Route exact path="/" render={() => <MainView/>}/>
+            <Route exact path="/category/:category" component={CategoryView}/>
+            <Route exact path="/post/:postid" component={PostEdit}/>
         </div>
     );
   }
 }
 
-export default App;
-
-{/*<Route path="/category" render={() => <CategoryView/>}/>*/}
-{/*<Route path="/post" render={() => <PostView/>}/>*/}
-{/*<Route path="/editpost" render={() => <PostEdit/>}/>*/}

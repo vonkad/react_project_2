@@ -1,5 +1,5 @@
-const reducer = function(state={}, action) {
-    return state;
-};
+import {combineReducers} from 'redux';
+import categoriesReducer from './categoriesReducer'
+import postReducer from "./postsReducer";
 
-export default reducer;
+export default combineReducers({categories: categoriesReducer, posts: postReducer});

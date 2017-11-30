@@ -26,3 +26,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+table.all-posts-list {
+    text-align:left;
+}
+
+table.all-posts-list th,
+table.all-posts-list td {
+    padding-right: 15px;
+}

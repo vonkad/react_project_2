@@ -1,10 +1,17 @@
-const categoriesList = fetch(
-    'http://localhost:3001/categories',
-    {
-        headers: {'Authorization': 'david-vonka'}
-    }
-).then(res => res.json());
+import {CATEGORIES_RECEIVED, CATEGORIES_REQUESTED} from "../actions/index";
 
-const categoriesReducer = function (state = categoriesList, action) {
+const categoriesReducer = function (state = {}, action) {
+    if (action.type === CATEGORIES_REQUESTED) {
+        state = {
+            state:'loading'
+        }
+    } else if (action.type === CATEGORIES_RECEIVED) {
+        state = {
+            state:'ready',
+            categories: action.categories
+        }
+    }
     return state;
 };
+
+export default categoriesReducer;
