@@ -3,6 +3,7 @@ export const CATEGORIES_RECEIVED = 'CATEGORIES_RECEIVED';
 export const POSTS_REQUESTED = 'POSTS_REQUESTED';
 export const POSTS_RECEIVED = 'POSTS_RECEIVED';
 export const SORT_POSTS = 'SORT_POSTS';
+export const UPDATE_POST = 'UPDATE_POST';
 
 export const categoriesRequested = () => ({type: CATEGORIES_REQUESTED});
 export const categoriesReceived = (categories) => ({type: CATEGORIES_RECEIVED, categories});
@@ -12,6 +13,7 @@ export const postsReceived = (posts) => ({type: POSTS_RECEIVED, posts});
 
 export const sortPosts = (orderby) => ({type:SORT_POSTS, orderby});
 
+export const updatePost = (postId, updateFunction) => ({type:UPDATE_POST, postId, updateFunction});
 
 /// this is thunk shit
 export function initCategories() {

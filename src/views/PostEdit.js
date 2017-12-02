@@ -13,8 +13,20 @@ class PostEdit extends Component {
         const state = this.props.state;
         if (state==='ready') {
             const posts = this.props.posts;
-            return <div>{
-                posts.filter(post => post.id === postId).map(post => <div>{post.title}</div>)
+            return <div className="post-edit-component">{
+                /// unmanaged form works great here
+                posts.filter(post => post.id === postId).map(post =>
+                    <form className="edit-post" onSubmit={this.handleSubmit}>
+                        <label >
+                            Title:
+                            <input type="text" value={post.title}/>
+                        </label>
+                        <label>
+                            Text:
+                            <textarea value={post.body}/>
+                        </label>
+                    </form>
+                )
             }</div>
         } else {
             return <div>Loading...</div>

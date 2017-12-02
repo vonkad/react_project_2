@@ -1,6 +1,6 @@
 import {POSTS_RECEIVED, POSTS_REQUESTED, SORT_POSTS} from "../actions/index";
 
-const postReducer = function (state = {}, action) {
+const postsReducer = function (state = {}, action) {
     let newState = state;
     if (action.type === POSTS_REQUESTED) {
         newState = {
@@ -22,4 +22,4 @@ const postReducer = function (state = {}, action) {
     return newState;
 };
 
-export default postReducer;
+export default postsReducer;
